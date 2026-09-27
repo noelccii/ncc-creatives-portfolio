@@ -249,6 +249,7 @@ a { text-decoration: none; }
   color: rgba(255, 255, 255, 0.85);
   padding: 1.5rem 20px;
   font-size: 0.85rem;
+  text-align: center;
 }
 
 .footer-line {
