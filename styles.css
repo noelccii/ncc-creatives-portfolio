@@ -228,6 +228,11 @@ a { text-decoration: none; }
 
 .portfolio-item {
   padding: 12px;
+  transition: transform 0.2s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-4px);
 }
 
 .portfolio-item img {
