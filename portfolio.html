@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | NCC Creatives</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="topbar">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <span class="topbar-brand">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -3px; margin-right: 4px;">
+        <path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/>
+        <path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/>
+      </svg>
+      NCC CREATIVES
+    </span>
+    <div class="topbar-user">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+      </svg>
+    </div>
+  </header>
+
+  <div class="dashboard-body">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="profile-block">
+        <img src="images/profile-photo.png" alt="Noel Christopher posed for a friendly personal profile portrait against a simple background" class="profile-avatar">
+        <div>
+          <p class="welcome-label">Welcome</p>
+          <p class="profile-name">Noel Christopher</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="index.html" class="sidebar-link">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+          Home
+        </a>
+        <a href="services.html" class="sidebar-link">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          Services
+        </a>
+        <a href="portfolio.html" class="sidebar-link active">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          Portfolio
+        </a>
+        <a href="about.html" class="sidebar-link">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+          About
+        </a>
+        <a href="contacts.html" class="sidebar-link">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          Contacts
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="dashboard-content">
+
+      <!-- ===== JUMBOTRON ===== -->
+      <div class="jumbotron">
+        <span class="eyebrow">My Work</span>
+        <h1>Portfolio</h1>
+        <p class="lead">
+          A small selection of digital art, film, and photography pieces I've made.
+          More gets added as I finish new projects.
+        </p>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <div class="portfolio-item">
+          <img src="images/portfolio-1.jpg" alt="Fauvist-style acrylic painting of a coastal sunset, with a purple-pink sky, golden water, and layered green and lavender foliage in the foreground">
+          <div class="portfolio-caption">
+            <h3>Project ShowCase 1#</h3>
+            <p>A simple <strong>Fauvism</strong> painting submission.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="images/portfolio-2.jpg" alt="Realistic painting of a spotted fawn standing in a green forest clearing beside a tree">
+          <div class="portfolio-caption">
+            <h3>Project ShowCase 2#</h3>
+            <p>Dear <strong>Genre</strong> painting submission.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="images/portfolio-3.jpg" alt="Portrait-orientation photograph of a cell tower and power lines silhouetted against a dusk sky">
+          <div class="portfolio-caption">
+            <h3>Project ShowCase 3#</h3>
+            <p>Stationary <strong>Portrait</strong> photograph <i>(Fujifilm X-A5)</i>.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="images/portfolio-4.jpg" alt="Landscape photograph of a green rice field at sunset with a distant cell tower and mountains">
+          <div class="portfolio-caption">
+            <h3>Project ShowCase 4#</h3>
+            <p><strong>Landscape</strong> photograph <i>(Fujifilm X-A5)</i>.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="images/portfolio-5.jpg" alt="Digital comic panel from the webtoon The Lightkeeper, showing a bearded sea captain holding a glowing lantern">
+          <div class="portfolio-caption">
+            <h3>Project ShowCase 5#</h3>
+            <p><strong>Webtoon Digital Art</strong> Submission. (the Webtoon title is: <i>The Lightkeeper</i>)</p>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer text-center">
+    <p class="mb-0">&copy; 2026 Noel Christopher P. Crausus II. Built for [WEB/BSAMA 2A].</p>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
