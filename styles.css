@@ -210,10 +210,22 @@ a { text-decoration: none; }
   margin-top: 0.4rem;
 }
 
+.btn-outline-light-custom {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: #ffffff;
+  transition: background 0.2s ease;
+}
+
+.btn-outline-light-custom:hover {
+  background: #e5e7eb;
+}
+
 .btn-accent {
   background: var(--accent);
   color: var(--ink);
   border: 1px solid var(--line);
+  transition: background 0.2s ease;
 }
 
 .btn-accent:hover { background: #fde047; }
