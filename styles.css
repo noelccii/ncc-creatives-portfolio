@@ -23,31 +23,56 @@ body {
   line-height: 1.6;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain 0.5s steps(2) infinite;
-}
-
-@keyframes grain {
-  0%   { transform: translate(0, 0); }
-  25%  { transform: translate(-2%, 2%); }
-  50%  { transform: translate(2%, -2%); }
-  75%  { transform: translate(-1%, 1%); }
-  100% { transform: translate(0, 0); }
-}
-
 h1, h2, h3, .topbar-brand, .profile-name { font-family: 'Poppins', sans-serif; }
 
 a { text-decoration: none; }
+
+/* ---------- Animated background blobs ---------- */
+
+.dashboard-content {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.dashboard-content::before,
+.dashboard-content::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.dashboard-content::before {
+  width: 420px;
+  height: 420px;
+  background: var(--sidebar-bg);
+  top: -100px;
+  left: -80px;
+  animation: floatOne 18s ease-in-out infinite;
+}
+
+.dashboard-content::after {
+  width: 380px;
+  height: 380px;
+  background: var(--accent);
+  bottom: -80px;
+  right: -60px;
+  animation: floatTwo 22s ease-in-out infinite;
+}
+
+@keyframes floatOne {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(120px, 80px) scale(1.15); }
+}
+
+@keyframes floatTwo {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-100px, -60px) scale(1.1); }
+}
 
 /* ---------- Top bar ---------- */
 
