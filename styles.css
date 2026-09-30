@@ -33,25 +33,24 @@ body::before {
   content: "";
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: -50%;
+  width: 200%;
   height: 100%;
   background: repeating-linear-gradient(
     45deg,
-    rgba(67, 13, 30, 0.06) 0px,
-    rgba(67, 13, 30, 0.06) 2px,
+    rgba(67, 13, 30, 0.08) 0px,
+    rgba(67, 13, 30, 0.08) 2px,
     transparent 2px,
     transparent 40px
   );
-  background-size: 200% 200%;
-  animation: slideLines 12s linear infinite;
+  animation: sweepLines 10s linear infinite;
   z-index: -1;
   pointer-events: none;
 }
 
-@keyframes slideLines {
-  0% { background-position: 0 0; }
-  100% { background-position: 200px 200px; }
+@keyframes sweepLines {
+  0%   { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(-200px) translateY(-200px); }
 }
 
 /*---------- tung sahur -----------*/
@@ -290,11 +289,15 @@ a { text-decoration: none; }
 
 .portfolio-item {
   padding: 12px;
-  transition: transform 0.2s ease;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .portfolio-item:hover {
   transform: translateY(-4px);
+  box-shadow: 4px 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .portfolio-item img {
