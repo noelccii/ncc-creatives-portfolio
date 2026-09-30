@@ -29,39 +29,38 @@ a { text-decoration: none; }
 
 /* ---------- Animated background blobs ---------- */
 
-.dashboard-content {
+body {
   position: relative;
-  overflow: hidden;
-  z-index: 0;
+  overflow-x: hidden;
 }
 
-.dashboard-content::before,
-.dashboard-content::after {
+body::before,
+body::after {
   content: "";
-  position: absolute;
+  position: fixed;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.35;
-  z-index: -1;
+  filter: blur(100px);
+  opacity: 0.45;
+  z-index: 0;
   pointer-events: none;
 }
 
-.dashboard-content::before {
-  width: 420px;
-  height: 420px;
+body::before {
+  width: 600px;
+  height: 600px;
   background: var(--sidebar-bg);
-  top: -100px;
-  left: -80px;
-  animation: floatOne 18s ease-in-out infinite;
+  top: -150px;
+  right: -180px;
+  animation: floatOne 20s ease-in-out infinite;
 }
 
-.dashboard-content::after {
-  width: 380px;
-  height: 380px;
+body::after {
+  width: 500px;
+  height: 500px;
   background: var(--accent);
-  bottom: -80px;
-  right: -60px;
-  animation: floatTwo 22s ease-in-out infinite;
+  bottom: -150px;
+  right: 10%;
+  animation: floatTwo 24s ease-in-out infinite;
 }
 
 @keyframes floatOne {
@@ -244,6 +243,11 @@ a { text-decoration: none; }
 
 .info-row .info-card {
   flex: 1;
+}
+
+.info-card, .jumbotron {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
 }
 
 /* ---------- Buttons ---------- */
