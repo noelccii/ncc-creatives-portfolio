@@ -27,51 +27,6 @@ h1, h2, h3, .topbar-brand, .profile-name { font-family: 'Poppins', sans-serif; }
 
 a { text-decoration: none; }
 
-/* ---------- Animated background blobs ---------- */
-
-body {
-  position: relative;
-  overflow-x: hidden;
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.45;
-  z-index: 0;
-  pointer-events: none;
-}
-
-body::before {
-  width: 600px;
-  height: 600px;
-  background: var(--sidebar-bg);
-  top: -150px;
-  right: -180px;
-  animation: floatOne 20s ease-in-out infinite;
-}
-
-body::after {
-  width: 500px;
-  height: 500px;
-  background: var(--accent);
-  bottom: -150px;
-  right: 10%;
-  animation: floatTwo 24s ease-in-out infinite;
-}
-
-@keyframes floatOne {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(120px, 80px) scale(1.15); }
-}
-
-@keyframes floatTwo {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-100px, -60px) scale(1.1); }
-}
 
 /* ---------- Top bar ---------- */
 
@@ -243,11 +198,6 @@ body::after {
 
 .info-row .info-card {
   flex: 1;
-}
-
-.info-card, .jumbotron {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(6px);
 }
 
 /* ---------- Buttons ---------- */
