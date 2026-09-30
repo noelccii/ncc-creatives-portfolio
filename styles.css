@@ -277,7 +277,7 @@ a { text-decoration: none; }
   max-width: 1100px;
 }
 
-.portfolio-item:has(iframe) {
+.portfolio-item-wide {
   grid-column: 1 / -1;
 }
 
