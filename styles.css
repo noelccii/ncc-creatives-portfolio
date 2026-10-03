@@ -81,8 +81,6 @@ body::before {
 .app-shell {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
 }
 
 /* ---------- Top bar ---------- */
@@ -115,10 +113,9 @@ body::before {
 
 /* ---------- Dashboard body: sidebar + content row ---------- */
 .dashboard-body {
-  flex: 1;              
+  flex: 1;
   display: flex;
   align-items: stretch;
-  overflow: hidden;     
 }
 
 /* ---------- Sidebar ---------- */
