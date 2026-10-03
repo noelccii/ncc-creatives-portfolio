@@ -1,13 +1,14 @@
+
 :root {
-  --topbar: #430d1e;       
-  --sidebar-bg: #66273d;  
-  --sidebar-active: #430d1e; 
-  --content-bg: #eef1f0;  
+  --topbar: #430d1e;
+  --sidebar-bg: #66273d;
+  --sidebar-active: #430d1e;
+  --content-bg: #eef1f0;
   --card-bg: #ffffff;
   --ink: #1f2937;
   --text: #374151;
   --muted: #9ca3af;
-  --accent: #fef08a;      
+  --accent: #fef08a;
   --line: #d1d5db;
   --radius: 12px;
   --shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
@@ -15,20 +16,26 @@
 
 * { box-sizing: border-box; }
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
+}
+
+body {
+  position: relative;
   background: var(--content-bg);
   color: var(--text);
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
 
-/* ---------- Moving diagonal line background ---------- */
-
-body {
-  position: relative;
+h1, h2, h3, .topbar-brand, .profile-name {
+  font-family: 'Poppins', sans-serif;
 }
 
+a { text-decoration: none; }
+
+/* ---------- Moving diagonal line background ---------- */
 body::before {
   content: "";
   position: fixed;
@@ -48,6 +55,12 @@ body::before {
   pointer-events: none;
 }
 
+@keyframes sweepLines {
+  0%   { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(-200px) translateY(-200px); }
+}
+
+/* ---------- "Vintage" page-load animation ---------- */
 @keyframes vintageIn {
   0%   { opacity: 0;    transform: translateY(10px); filter: brightness(0.85); }
   20%  { opacity: 0.3;  transform: translateY(8px); }
@@ -61,56 +74,20 @@ body::before {
   animation: vintageIn 0.6s steps(6, end) forwards;
 }
 
-@keyframes sweepLines {
-  0%   { transform: translateX(0) translateY(0); }
-  100% { transform: translateX(-200px) translateY(-200px); }
-}
-
-/*---------- tung sahur -----------*/
-
-h1, h2, h3, .topbar-brand, .profile-name { font-family: 'Poppins', sans-serif; }
-
-a { text-decoration: none; }
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
+/* ============================================
+   APP SHELL — topbar/sidebar/footer
+   ============================================ */
 
 .app-shell {
   display: flex;
   flex-direction: column;
-  height: 100vh;    
-  overflow: hidden;   
-}
-
-.topbar {
-  flex-shrink: 0;      
-}
-
-.dashboard-body {
-  flex: 1;              
-  display: flex;
-  overflow: hidden;    
-}
-
-.sidebar {
-  flex-shrink: 0;        
-}
-
-.dashboard-content {
-  flex: 1;
-  overflow-y: auto;     
-  padding: 28px 32px;
-}
-
-.site-footer {
-  flex-shrink: 0;       
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* ---------- Top bar ---------- */
-
 .topbar {
+  flex-shrink: 0;
   height: 64px;
   background: var(--topbar);
   color: #ffffff;
@@ -136,33 +113,26 @@ html, body {
 
 .topbar-user { display: flex; align-items: center; }
 
-/* ---------- Dashboard body: sidebar + content ---------- */
-
+/* ---------- Dashboard body: sidebar + content row ---------- */
 .dashboard-body {
+  flex: 1;              
   display: flex;
   align-items: stretch;
+  overflow: hidden;     
 }
 
 /* ---------- Sidebar ---------- */
 .sidebar {
-  width: 250px;
   flex-shrink: 0;
+  width: 250px;
   background: var(--sidebar-bg);
   color: #ffffff;
   padding: 24px 0;
 }
 
-.sidebar-link:hover {
-  filter: brightness(1.15); 
-}
-
-.sidebar-link:active {
-  filter: brightness(0.8); 
-}
-
 .profile-block {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 10px;
@@ -204,13 +174,18 @@ html, body {
   font-weight: 500;
   font-size: 0.9rem;
   border-left: 3px solid transparent;
-  transition: background 0.15s ease;
   transition: filter 0.15s ease, background-color 0.15s ease;
 }
 
 .sidebar-link .icon { flex-shrink: 0; }
+
 .sidebar-link:hover {
   background: rgba(255, 255, 255, 0.06);
+  filter: brightness(1.15);  
+}
+
+.sidebar-link:active {
+  filter: brightness(0.8);   
 }
 
 .sidebar-link.active {
@@ -219,18 +194,17 @@ html, body {
   color: #ffffff;
 }
 
-/* ---------- Main content ---------- */
-
+/* ---------- Main content (the only part that scrolls) ---------- */
 .dashboard-content {
   flex: 1;
+  overflow-y: auto;
   padding: 28px 32px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* ---------- Jumbotron ---------- */
-
+/* ---------- Jumbotron (required by the assignment) ---------- */
 .jumbotron {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -260,7 +234,6 @@ html, body {
 }
 
 /* ---------- Info cards ---------- */
-
 .info-card {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -289,8 +262,19 @@ html, body {
   flex: 1;
 }
 
-/* ---------- Buttons ---------- */
+/* ---------- Services page cards ---------- */
+.service-card .service-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
 
+/* ---------- Buttons ---------- */
 .btn-accent, .btn-outline-light-custom {
   display: inline-block;
   padding: 0.6rem 1.4rem;
@@ -298,35 +282,23 @@ html, body {
   font-weight: 600;
   margin-right: 0.5rem;
   margin-top: 0.4rem;
-}
-
-.btn-outline-light-custom {
   border: 1px solid var(--line);
-  color: var(--ink);
-  background: #ffffff;
   transition: background 0.2s ease;
-}
-
-.btn-outline-light-custom:hover {
-  background: #e5e7eb;
 }
 
 .btn-accent {
   background: var(--accent);
   color: var(--ink);
-  border: 1px solid var(--line);
-  transition: background 0.2s ease;
 }
-
 .btn-accent:hover { background: #fde047; }
+
 .btn-outline-light-custom {
-  border: 1px solid var(--line);
-  color: var(--ink);
   background: #ffffff;
+  color: var(--ink);
 }
+.btn-outline-light-custom:hover { background: #e5e7eb; }
 
-/* ---------- Portfolio Fix ----------- */
-
+/* ---------- Portfolio grid ---------- */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -336,12 +308,6 @@ html, body {
 
 .portfolio-item-wide {
   grid-column: 1 / -1;
-}
-
-@media (max-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .portfolio-item {
@@ -365,8 +331,8 @@ html, body {
 }
 
 /* ---------- Footer ---------- */
-
 .site-footer {
+  flex-shrink: 0;
   background: var(--topbar);
   color: rgba(255, 255, 255, 0.85);
   padding: 1.5rem 20px;
@@ -392,8 +358,7 @@ html, body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ---------- Contact Form ---------- */
-
+/* ---------- Contact form ---------- */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -457,11 +422,19 @@ html, body {
   transform: translateX(4px);
 }
 
-/* ---------- Responsive: hamburger ---------- */
+/* ---------- About page lists ---------- */
+.about-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.about-list li { margin-bottom: 6px; }
 
+/* ---------- Responsive: hamburger + mobile sidebar ---------- */
 @media (max-width: 768px) {
   .menu-toggle { display: block; }
+
   .dashboard-body { position: relative; }
+
   .sidebar {
     position: absolute;
     top: 0;
@@ -472,5 +445,8 @@ html, body {
     z-index: 10;
   }
   .sidebar.open { transform: translateX(0); }
+
   .info-row { flex-direction: column; }
+
+  .portfolio-grid { grid-template-columns: 1fr; }
 }
