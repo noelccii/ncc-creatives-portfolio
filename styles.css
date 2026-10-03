@@ -153,10 +153,6 @@ html, body {
   padding: 24px 0;
 }
 
-.sidebar-link {
-  transition: filter 0.15s ease, background-color 0.15s ease;
-}
-
 .sidebar-link:hover {
   filter: brightness(1.15); 
 }
@@ -210,6 +206,7 @@ html, body {
   font-size: 0.9rem;
   border-left: 3px solid transparent;
   transition: background 0.15s ease;
+  transition: filter 0.15s ease, background-color 0.15s ease;
 }
 
 .sidebar-link .icon { flex-shrink: 0; }
